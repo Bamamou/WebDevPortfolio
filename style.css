@@ -26,3 +26,8 @@ p {
 .card p:last-child {
 	margin-bottom: 0;
 }
+
+.profile-image {
+  position: relative;
+  top: 400px; /* Adjust as needed */
+}
