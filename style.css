@@ -1,33 +1,234 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Base Styles */
 body {
-	padding: 2rem;
-	font-family: -apple-system, BlinkMacSystemFont, "Arial", sans-serif;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
-h1 {
-	font-size: 16px;
-	margin-top: 0;
+/* Gradient Text Effect */
+.gradient-text {
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
-p {
-	color: rgb(107, 114, 128);
-	font-size: 15px;
-	margin-bottom: 10px;
-	margin-top: 5px;
+/* Card Hover Effects */
+.card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-.card {
-	max-width: 620px;
-	margin: 0 auto;
-	padding: 16px;
-	border: 1px solid lightgray;
-	border-radius: 16px;
+/* Project Card Styles */
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 0.75rem;
 }
 
-.card p:last-child {
-	margin-bottom: 0;
+.project-card:hover::before {
+    opacity: 1;
 }
 
-.profile-image {
-  position: relative;
-  top: 400px; /* Adjust as needed */
+/* Navigation Link Styles */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hero Section Background */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: #f3f4f6;
+    z-index: -1;
+}
+
+/* Float Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Skill Bar Styles */
+.skill-bar {
+    height: 8px;
+    border-radius: 4px;
+    background: #e5e7eb;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+}
+
+/* Modern Quote Styles */
+.quote-container {
+    position: relative;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.quote-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textShimmer 3s ease-in-out infinite;
+}
+
+/* Quote Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textShimmer {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Hover effect for quote container */
+.quote-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+}
+
+/* Subtle floating animations for quote box only */
+@keyframes float-slow {
+    0%, 100% { 
+        transform: translateY(0px) translateX(0px); 
+        opacity: 0.6;
+    }
+    33% { 
+        transform: translateY(-10px) translateX(5px); 
+        opacity: 0.8;
+    }
+    66% { 
+        transform: translateY(5px) translateX(-3px); 
+        opacity: 0.4;
+    }
+}
+
+@keyframes float-slower {
+    0%, 100% { 
+        transform: translateY(0px) translateX(0px) scale(1); 
+        opacity: 0.5;
+    }
+    50% { 
+        transform: translateY(-8px) translateX(-6px) scale(1.1); 
+        opacity: 0.7;
+    }
+}
+
+@keyframes float-slowest {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg); 
+        opacity: 0.4;
+    }
+    25% { 
+        transform: translateY(-6px) rotate(90deg); 
+        opacity: 0.6;
+    }
+    75% { 
+        transform: translateY(4px) rotate(270deg); 
+        opacity: 0.3;
+    }
+}
+
+.animate-float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-float-slower {
+    animation: float-slower 12s ease-in-out infinite;
+}
+
+.animate-float-slowest {
+    animation: float-slowest 15s ease-in-out infinite;
+}
+
+/* Floating animation for background elements */
+.quote-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    animation: rotate 20s linear infinite;
+    z-index: -1;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Quote Transition Styles */
+#random-quote, #quote-author {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Responsive text sizing */
+@media (max-width: 768px) {
+    .quote-text {
+        font-size: 1.25rem !important;
+        line-height: 1.6;
+    }
 }
