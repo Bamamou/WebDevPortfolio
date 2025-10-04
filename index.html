@@ -1019,36 +1019,65 @@
             submitIcon.classList.add('hidden');
             loadingIcon.classList.remove('hidden');
             
+            // Debug: Log form data
+            const formData = new FormData(this);
+            console.log('Form data being sent:');
+            for (let [key, value] of formData.entries()) {
+                console.log(key + ': ' + value);
+            }
+            
+            // Check if environment variables are properly set
+            const serviceId = 'EMAILJS_SERVICE_ID_PLACEHOLDER';
+            const templateId = 'EMAILJS_TEMPLATE_ID_PLACEHOLDER';
+            
+            if (serviceId.includes('PLACEHOLDER') || templateId.includes('PLACEHOLDER')) {
+                // Environment variables not replaced - show error
+                messageDiv.className = 'mb-6 p-4 rounded-lg bg-yellow-100 border border-yellow-300 text-yellow-800';
+                messageDiv.innerHTML = '<i class="fas fa-exclamation-triangle mr-2"></i>Configuration error: Please check environment variables setup. Contact me directly at bamamounicolas@gmail.com';
+                messageDiv.classList.remove('hidden');
+                
+                // Reset button state
+                submitBtn.disabled = false;
+                submitText.textContent = 'Send Message';
+                submitIcon.classList.remove('hidden');
+                loadingIcon.classList.add('hidden');
+                
+                return;
+            }
+            
             // Send email using EmailJS with environment variables
-            emailjs.sendForm('EMAILJS_SERVICE_ID_PLACEHOLDER', 'EMAILJS_TEMPLATE_ID_PLACEHOLDER', this)
+            emailjs.sendForm(serviceId, templateId, this)
                 .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
+                    console.log('EmailJS SUCCESS!', response.status, response.text);
                     
-                    // Show success message
+                    // Show success message with form data confirmation
+                    const userName = document.getElementById('from_name').value;
+                    const userEmail = document.getElementById('from_email').value;
+                    
                     messageDiv.className = 'mb-6 p-4 rounded-lg bg-green-100 border border-green-300 text-green-800';
-                    messageDiv.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Message sent successfully! I\'ll get back to you soon.';
+                    messageDiv.innerHTML = `<i class="fas fa-check-circle mr-2"></i>Thank you ${userName}! Your message has been sent successfully. I'll respond to ${userEmail} soon.`;
                     messageDiv.classList.remove('hidden');
                     
                     // Reset form
                     document.getElementById('contact-form').reset();
                     
-                    // Hide message after 5 seconds
+                    // Hide message after 8 seconds
                     setTimeout(function() {
                         messageDiv.classList.add('hidden');
-                    }, 5000);
+                    }, 8000);
                     
                 }, function(error) {
-                    console.log('FAILED...', error);
+                    console.log('EmailJS FAILED...', error);
                     
-                    // Show error message
+                    // Show error message with fallback contact info
                     messageDiv.className = 'mb-6 p-4 rounded-lg bg-red-100 border border-red-300 text-red-800';
-                    messageDiv.innerHTML = '<i class="fas fa-exclamation-circle mr-2"></i>Failed to send message. Please try again or contact me directly.';
+                    messageDiv.innerHTML = '<i class="fas fa-exclamation-circle mr-2"></i>Failed to send message. Please contact me directly at <a href="mailto:bamamounicolas@gmail.com" class="underline">bamamounicolas@gmail.com</a>';
                     messageDiv.classList.remove('hidden');
                     
-                    // Hide message after 7 seconds
+                    // Hide message after 10 seconds
                     setTimeout(function() {
                         messageDiv.classList.add('hidden');
-                    }, 7000);
+                    }, 10000);
                 })
                 .finally(function() {
                     // Reset button state
