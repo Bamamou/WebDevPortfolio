@@ -389,13 +389,69 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Project 7: HEVCS Charging Station Dashboard -->
+                <div class="relative project-card rounded-xl overflow-hidden shadow-md transition-all duration-300 h-80 bg-gradient-to-br from-emerald-500 to-teal-600 hidden" id="hevcs-project">
+                    <img src="/resources/charging.png" alt="EV Charging Station" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                    
+                    <!-- Title and Description - Show on hover only -->
+                    <div class="absolute inset-0 p-6 flex flex-col justify-center text-white opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-xl font-bold mb-2">HEVCS Charging Station</h3>
+                        <p class="text-sm mb-4">Modern dashboard for monitoring EV charging stations with real-time data visualization, energy consumption analytics, and station status tracking.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">React</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">WebSocket</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">Chart.js</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">IoT</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Buttons - Always visible -->
+                    <div class="absolute bottom-4 left-4 right-4 flex space-x-2">
+                        <a href="https://github.com/Bamamou" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-20 px-3 py-2 rounded-full text-xs hover:bg-opacity-30 transition-all text-white">
+                            <i class="fab fa-github mr-1"></i> Code
+                        </a>
+                        <a href="https://hevcs.onrender.com/" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-20 px-3 py-2 rounded-full text-xs hover:bg-opacity-30 transition-all text-white">
+                            <i class="fas fa-bolt mr-1"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 8: EV Battery Pack Design Excellence -->
+                <div class="relative project-card rounded-xl overflow-hidden shadow-md transition-all duration-300 h-80 bg-gradient-to-br from-amber-500 to-orange-600 hidden" id="battery-project">
+                    <img src="/resources/battery pack.png" alt="EV Battery Pack Design" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                    
+                    <!-- Title and Description - Show on hover only -->
+                    <div class="absolute inset-0 p-6 flex flex-col justify-center text-white opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-xl font-bold mb-2">EV Battery Pack Design Excellence</h3>
+                        <p class="text-sm mb-4">End-to-end expertise from cell selection to battery pack integration. Professional engineering tools, calculators, and technical resources for battery engineers.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">CAD Design</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">MATLAB</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">Python</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">Engineering</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Buttons - Always visible -->
+                    <div class="absolute bottom-4 left-4 right-4 flex space-x-2">
+                        <a href="https://github.com/Bamamou" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-20 px-3 py-2 rounded-full text-xs hover:bg-opacity-30 transition-all text-white">
+                            <i class="fab fa-github mr-1"></i> Code
+                        </a>
+                        <a href="https://batterydesign.netlify.app/" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-20 px-3 py-2 rounded-full text-xs hover:bg-opacity-30 transition-all text-white">
+                            <i class="fas fa-calculator mr-1"></i> Tools
+                        </a>
+                    </div>
+                </div>
             </div>
             
             <div class="text-center mt-12">
-                <a href="#" class="inline-flex items-center px-6 py-3 border border-gray-300 rounded-full text-gray-700 font-medium hover:bg-gray-100 transition-all duration-300">
+                <button onclick="toggleAllProjects()" id="view-all-btn" class="inline-flex items-center px-6 py-3 border border-gray-300 rounded-full text-gray-700 font-medium hover:bg-gray-100 transition-all duration-300">
                     View All Projects
-                    <i class="fas fa-arrow-right ml-2"></i>
-                </a>
+                    <i class="fas fa-arrow-right ml-2" id="view-all-icon"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -897,6 +953,42 @@
                 changeQuote();
             }, 800);
         });
+
+        // Projects toggle functionality
+        let showingAllProjects = false;
+
+        function toggleAllProjects() {
+            const hevcsProject = document.getElementById('hevcs-project');
+            const batteryProject = document.getElementById('battery-project');
+            const viewAllBtn = document.getElementById('view-all-btn');
+            const viewAllIcon = document.getElementById('view-all-icon');
+            
+            if (!showingAllProjects) {
+                // Show both hidden projects
+                hevcsProject.classList.remove('hidden');
+                hevcsProject.style.animation = 'fadeInUp 0.6s ease-out';
+                
+                batteryProject.classList.remove('hidden');
+                batteryProject.style.animation = 'fadeInUp 0.8s ease-out';
+                
+                // Update button text and icon
+                viewAllBtn.innerHTML = 'Show Less <i class="fas fa-arrow-up ml-2" id="view-all-icon"></i>';
+                showingAllProjects = true;
+            } else {
+                // Hide both projects
+                hevcsProject.style.animation = 'fadeOut 0.4s ease-in';
+                batteryProject.style.animation = 'fadeOut 0.4s ease-in';
+                
+                setTimeout(() => {
+                    hevcsProject.classList.add('hidden');
+                    batteryProject.classList.add('hidden');
+                }, 400);
+                
+                // Update button text and icon
+                viewAllBtn.innerHTML = 'View All Projects <i class="fas fa-arrow-right ml-2" id="view-all-icon"></i>';
+                showingAllProjects = false;
+            }
+        }
     </script>
 </body>
 </html>
