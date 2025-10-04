@@ -446,6 +446,34 @@
                         </a>
                     </div>
                 </div>
+
+                <!-- Project 9: Incubator Control System -->
+                <div class="relative project-card rounded-xl overflow-hidden shadow-md transition-all duration-300 h-80 bg-gradient-to-br from-cyan-500 to-blue-600 hidden" id="incubator-project">
+                    <img src="/resources/Incubator Control System.png" alt="Incubator Control System" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                    
+                    <!-- Title and Description - Show on hover only -->
+                    <div class="absolute inset-0 p-6 flex flex-col justify-center text-white opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-xl font-bold mb-2">Incubator Control System</h3>
+                        <p class="text-sm mb-4">Modern IoT WebSocket-based real-time monitoring dashboard for incubator control systems. Features live temperature, humidity, and environmental parameter tracking with responsive alerts.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">IoT</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">WebSocket</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">Real-time</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">Dashboard</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Buttons - Always visible -->
+                    <div class="absolute bottom-4 left-4 right-4 flex space-x-2">
+                        <a href="https://github.com/Bamamou" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-20 px-3 py-2 rounded-full text-xs hover:bg-opacity-30 transition-all text-white">
+                            <i class="fab fa-github mr-1"></i> Code
+                        </a>
+                        <a href="https://brainysol.netlify.app/" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-20 px-3 py-2 rounded-full text-xs hover:bg-opacity-30 transition-all text-white">
+                            <i class="fas fa-chart-line mr-1"></i> Dashboard
+                        </a>
+                    </div>
+                </div>
             </div>
             
             <div class="text-center mt-12">
@@ -959,28 +987,34 @@
         function toggleAllProjects() {
             const hevcsProject = document.getElementById('hevcs-project');
             const batteryProject = document.getElementById('battery-project');
+            const incubatorProject = document.getElementById('incubator-project');
             const viewAllBtn = document.getElementById('view-all-btn');
             const viewAllIcon = document.getElementById('view-all-icon');
             
             if (!showingAllProjects) {
-                // Show both hidden projects
+                // Show all hidden projects
                 hevcsProject.classList.remove('hidden');
                 hevcsProject.style.animation = 'fadeInUp 0.6s ease-out';
                 
                 batteryProject.classList.remove('hidden');
                 batteryProject.style.animation = 'fadeInUp 0.8s ease-out';
                 
+                incubatorProject.classList.remove('hidden');
+                incubatorProject.style.animation = 'fadeInUp 1.0s ease-out';
+                
                 // Update button text and icon
                 viewAllBtn.innerHTML = 'Show Less <i class="fas fa-arrow-up ml-2" id="view-all-icon"></i>';
                 showingAllProjects = true;
             } else {
-                // Hide both projects
+                // Hide all additional projects
                 hevcsProject.style.animation = 'fadeOut 0.4s ease-in';
                 batteryProject.style.animation = 'fadeOut 0.4s ease-in';
+                incubatorProject.style.animation = 'fadeOut 0.4s ease-in';
                 
                 setTimeout(() => {
                     hevcsProject.classList.add('hidden');
                     batteryProject.classList.add('hidden');
+                    incubatorProject.classList.add('hidden');
                 }, 400);
                 
                 // Update button text and icon
