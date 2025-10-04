@@ -530,6 +530,34 @@
                         </a>
                     </div>
                 </div>
+
+                <!-- Project 12: ZAMSA - Zaly Multi-Services Auto -->
+                <div class="relative project-card rounded-xl overflow-hidden shadow-md transition-all duration-300 h-80 bg-gradient-to-br from-red-600 to-orange-600 hidden" id="zamsa-project">
+                    <img src="/resources/zamsa.png" alt="ZAMSA - Zaly Multi-Services Auto" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                    
+                    <!-- Title and Description - Show on hover only -->
+                    <div class="absolute inset-0 p-6 flex flex-col justify-center text-white opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-xl font-bold mb-2">ZAMSA - Zaly Multi-Services Auto</h3>
+                        <p class="text-sm mb-4">Votre partenaire de confiance pour l'entretien automobile à Nzérékoré. Services professionnels, qualité garantie, prix abordables.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">Automobile</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">Entretien</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">Nzérékoré</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">Services</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Buttons - Always visible -->
+                    <div class="absolute bottom-4 left-4 right-4 flex space-x-2">
+                        <a href="https://github.com/Bamamou" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-20 px-3 py-2 rounded-full text-xs hover:bg-opacity-30 transition-all text-white">
+                            <i class="fab fa-github mr-1"></i> Code
+                        </a>
+                        <a href="https://zamsa-zaly.netlify.app/" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-20 px-3 py-2 rounded-full text-xs hover:bg-opacity-30 transition-all text-white">
+                            <i class="fas fa-car mr-1"></i> Services
+                        </a>
+                    </div>
+                </div>
             </div>
             
             <div class="text-center mt-12">
@@ -1046,6 +1074,7 @@
             const incubatorProject = document.getElementById('incubator-project');
             const simandouProject = document.getElementById('simandou-project');
             const professionalToolsProject = document.getElementById('professional-tools-project');
+            const zamsaProject = document.getElementById('zamsa-project');
             const viewAllBtn = document.getElementById('view-all-btn');
             const viewAllIcon = document.getElementById('view-all-icon');
             
@@ -1066,6 +1095,9 @@
                 professionalToolsProject.classList.remove('hidden');
                 professionalToolsProject.style.animation = 'fadeInUp 1.4s ease-out';
                 
+                zamsaProject.classList.remove('hidden');
+                zamsaProject.style.animation = 'fadeInUp 1.6s ease-out';
+                
                 // Update button text and icon
                 viewAllBtn.innerHTML = 'Show Less <i class="fas fa-arrow-up ml-2" id="view-all-icon"></i>';
                 showingAllProjects = true;
@@ -1076,6 +1108,7 @@
                 incubatorProject.style.animation = 'fadeOut 0.4s ease-in';
                 simandouProject.style.animation = 'fadeOut 0.4s ease-in';
                 professionalToolsProject.style.animation = 'fadeOut 0.4s ease-in';
+                zamsaProject.style.animation = 'fadeOut 0.4s ease-in';
                 
                 setTimeout(() => {
                     hevcsProject.classList.add('hidden');
@@ -1083,6 +1116,7 @@
                     incubatorProject.classList.add('hidden');
                     simandouProject.classList.add('hidden');
                     professionalToolsProject.classList.add('hidden');
+                    zamsaProject.classList.add('hidden');
                 }, 400);
                 
                 // Update button text and icon
