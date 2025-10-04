@@ -1,0 +1,7 @@
+# Netlify configuration
+[build]
+  command = "chmod +x build.sh && ./build.sh"
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "18"
