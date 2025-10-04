@@ -156,7 +156,7 @@
                     </div>
                     <h3 class="text-xl font-bold mb-3">Education</h3>
                     <p class="text-gray-600">
-                        Currently pursuing a Graduate Certificate in Electric Drivetrain Technology at the University of Colorado Boulder after a Master's degree in Electrical Engineering with a focus on Battery Energy Storage Systems from Beijing Jiaotong University.
+                        Currently pursuing a Graduate Certificate in Electric Drivetrain Technology at the University of Colorado Boulder after a Master's degree in Electrical Engineering with a focus on Battery Energy Storage Systems from <b>Beijing Jiaotong University</b>.
                     </p>
                 </div>
                 
@@ -471,6 +471,62 @@
                         </a>
                         <a href="https://brainysol.netlify.app/" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-20 px-3 py-2 rounded-full text-xs hover:bg-opacity-30 transition-all text-white">
                             <i class="fas fa-chart-line mr-1"></i> Dashboard
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 10: SIMANDOU2040 Carrière Professionnel -->
+                <div class="relative project-card rounded-xl overflow-hidden shadow-md transition-all duration-300 h-80 bg-gradient-to-br from-yellow-600 to-amber-700 hidden" id="simandou-project">
+                    <img src="/resources/simandou2040.png" alt="SIMANDOU2040 Carrière Professionnel" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                    
+                    <!-- Title and Description - Show on hover only -->
+                    <div class="absolute inset-0 p-6 flex flex-col justify-center text-white opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-xl font-bold mb-2">SIMANDOU2040 Carrière Professionnel</h3>
+                        <p class="text-sm mb-4">Découvrez tous les métiers du plus grand projet minier de Guinée. Explorez les opportunités, les formations requises et construisez votre carrière dans l'industrie minière.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">Carrière</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">Mining</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">Formation</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">Guinée</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Buttons - Always visible -->
+                    <div class="absolute bottom-4 left-4 right-4 flex space-x-2">
+                        <a href="https://github.com/Bamamou" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-20 px-3 py-2 rounded-full text-xs hover:bg-opacity-30 transition-all text-white">
+                            <i class="fab fa-github mr-1"></i> Code
+                        </a>
+                        <a href="https://simadou2040.netlify.app/" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-20 px-3 py-2 rounded-full text-xs hover:bg-opacity-30 transition-all text-white">
+                            <i class="fas fa-briefcase mr-1"></i> Carrières
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 11: Professional Tools for Modern Work -->
+                <div class="relative project-card rounded-xl overflow-hidden shadow-md transition-all duration-300 h-80 bg-gradient-to-br from-slate-600 to-gray-700 hidden" id="professional-tools-project">
+                    <img src="/resources/professional-tools.png" alt="Professional Tools for Modern Work" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                    
+                    <!-- Title and Description - Show on hover only -->
+                    <div class="absolute inset-0 p-6 flex flex-col justify-center text-white opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-xl font-bold mb-2">Professional Tools for Modern Work</h3>
+                        <p class="text-sm mb-4">Create professional CVs and invoices with our modern, intuitive tools. Everything you need for your professional documents in one place.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">CV Builder</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">Invoice</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">Professional</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">Tools</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Buttons - Always visible -->
+                    <div class="absolute bottom-4 left-4 right-4 flex space-x-2">
+                        <a href="https://github.com/Bamamou" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-20 px-3 py-2 rounded-full text-xs hover:bg-opacity-30 transition-all text-white">
+                            <i class="fab fa-github mr-1"></i> Code
+                        </a>
+                        <a href="https://modernworktools.netlify.app/" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-20 px-3 py-2 rounded-full text-xs hover:bg-opacity-30 transition-all text-white">
+                            <i class="fas fa-tools mr-1"></i> Tools
                         </a>
                     </div>
                 </div>
@@ -988,6 +1044,8 @@
             const hevcsProject = document.getElementById('hevcs-project');
             const batteryProject = document.getElementById('battery-project');
             const incubatorProject = document.getElementById('incubator-project');
+            const simandouProject = document.getElementById('simandou-project');
+            const professionalToolsProject = document.getElementById('professional-tools-project');
             const viewAllBtn = document.getElementById('view-all-btn');
             const viewAllIcon = document.getElementById('view-all-icon');
             
@@ -1002,6 +1060,12 @@
                 incubatorProject.classList.remove('hidden');
                 incubatorProject.style.animation = 'fadeInUp 1.0s ease-out';
                 
+                simandouProject.classList.remove('hidden');
+                simandouProject.style.animation = 'fadeInUp 1.2s ease-out';
+                
+                professionalToolsProject.classList.remove('hidden');
+                professionalToolsProject.style.animation = 'fadeInUp 1.4s ease-out';
+                
                 // Update button text and icon
                 viewAllBtn.innerHTML = 'Show Less <i class="fas fa-arrow-up ml-2" id="view-all-icon"></i>';
                 showingAllProjects = true;
@@ -1010,11 +1074,15 @@
                 hevcsProject.style.animation = 'fadeOut 0.4s ease-in';
                 batteryProject.style.animation = 'fadeOut 0.4s ease-in';
                 incubatorProject.style.animation = 'fadeOut 0.4s ease-in';
+                simandouProject.style.animation = 'fadeOut 0.4s ease-in';
+                professionalToolsProject.style.animation = 'fadeOut 0.4s ease-in';
                 
                 setTimeout(() => {
                     hevcsProject.classList.add('hidden');
                     batteryProject.classList.add('hidden');
                     incubatorProject.classList.add('hidden');
+                    simandouProject.classList.add('hidden');
+                    professionalToolsProject.classList.add('hidden');
                 }, 400);
                 
                 // Update button text and icon
