@@ -392,7 +392,7 @@
                 </div>
 
                 <!-- Project 7: HEVCS Charging Station Dashboard -->
-                <div class="relative project-card rounded-xl overflow-hidden shadow-md transition-all duration-300 h-80 bg-gradient-to-br from-emerald-500 to-teal-600 hidden" id="hevcs-project">
+                <div class="relative project-card rounded-xl overflow-hidden shadow-md transition-all duration-300 h-80 bg-gradient-to-br from-emerald-500 to-teal-600" id="hevcs-project">
                     <img src="/resources/charging.png" alt="EV Charging Station" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-40"></div>
                     
@@ -420,7 +420,7 @@
                 </div>
 
                 <!-- Project 8: EV Battery Pack Design Excellence -->
-                <div class="relative project-card rounded-xl overflow-hidden shadow-md transition-all duration-300 h-80 bg-gradient-to-br from-amber-500 to-orange-600 hidden" id="battery-project">
+                <div class="relative project-card rounded-xl overflow-hidden shadow-md transition-all duration-300 h-80 bg-gradient-to-br from-amber-500 to-orange-600" id="battery-project">
                     <img src="/resources/battery pack.png" alt="EV Battery Pack Design" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-40"></div>
                     
@@ -448,7 +448,7 @@
                 </div>
 
                 <!-- Project 9: Incubator Control System -->
-                <div class="relative project-card rounded-xl overflow-hidden shadow-md transition-all duration-300 h-80 bg-gradient-to-br from-cyan-500 to-blue-600 hidden" id="incubator-project">
+                <div class="relative project-card rounded-xl overflow-hidden shadow-md transition-all duration-300 h-80 bg-gradient-to-br from-cyan-500 to-blue-600" id="incubator-project">
                     <img src="/resources/Incubator Control System.png" alt="Incubator Control System" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black bg-opacity-40"></div>
                     
@@ -1125,9 +1125,6 @@
         let showingAllProjects = false;
 
         function toggleAllProjects() {
-            const hevcsProject = document.getElementById('hevcs-project');
-            const batteryProject = document.getElementById('battery-project');
-            const incubatorProject = document.getElementById('incubator-project');
             const simandouProject = document.getElementById('simandou-project');
             const professionalToolsProject = document.getElementById('professional-tools-project');
             const zamsaProject = document.getElementById('zamsa-project');
@@ -1138,38 +1135,26 @@
             
             if (!showingAllProjects) {
                 // Show all hidden projects
-                hevcsProject.classList.remove('hidden');
-                hevcsProject.style.animation = 'fadeInUp 0.6s ease-out';
-                
-                batteryProject.classList.remove('hidden');
-                batteryProject.style.animation = 'fadeInUp 0.8s ease-out';
-                
-                incubatorProject.classList.remove('hidden');
-                incubatorProject.style.animation = 'fadeInUp 1.0s ease-out';
-                
                 simandouProject.classList.remove('hidden');
-                simandouProject.style.animation = 'fadeInUp 1.2s ease-out';
+                simandouProject.style.animation = 'fadeInUp 0.6s ease-out';
                 
                 professionalToolsProject.classList.remove('hidden');
-                professionalToolsProject.style.animation = 'fadeInUp 1.4s ease-out';
+                professionalToolsProject.style.animation = 'fadeInUp 0.8s ease-out';
                 
                 zamsaProject.classList.remove('hidden');
-                zamsaProject.style.animation = 'fadeInUp 1.6s ease-out';
+                zamsaProject.style.animation = 'fadeInUp 1.0s ease-out';
                 
                 epigProject.classList.remove('hidden');
-                epigProject.style.animation = 'fadeInUp 1.8s ease-out';
+                epigProject.style.animation = 'fadeInUp 1.2s ease-out';
                 
                 gestionImmobiliereProject.classList.remove('hidden');
-                gestionImmobiliereProject.style.animation = 'fadeInUp 2.0s ease-out';
+                gestionImmobiliereProject.style.animation = 'fadeInUp 1.4s ease-out';
                 
                 // Update button text and icon
                 viewAllBtn.innerHTML = 'Show Less <i class="fas fa-arrow-up ml-2" id="view-all-icon"></i>';
                 showingAllProjects = true;
             } else {
                 // Hide all additional projects
-                hevcsProject.style.animation = 'fadeOut 0.4s ease-in';
-                batteryProject.style.animation = 'fadeOut 0.4s ease-in';
-                incubatorProject.style.animation = 'fadeOut 0.4s ease-in';
                 simandouProject.style.animation = 'fadeOut 0.4s ease-in';
                 professionalToolsProject.style.animation = 'fadeOut 0.4s ease-in';
                 zamsaProject.style.animation = 'fadeOut 0.4s ease-in';
@@ -1177,9 +1162,6 @@
                 gestionImmobiliereProject.style.animation = 'fadeOut 0.4s ease-in';
                 
                 setTimeout(() => {
-                    hevcsProject.classList.add('hidden');
-                    batteryProject.classList.add('hidden');
-                    incubatorProject.classList.add('hidden');
                     simandouProject.classList.add('hidden');
                     professionalToolsProject.classList.add('hidden');
                     zamsaProject.classList.add('hidden');
