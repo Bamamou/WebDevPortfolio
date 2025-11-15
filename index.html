@@ -558,6 +558,62 @@
                         </a>
                     </div>
                 </div>
+
+                <!-- Project 13: EPIG - Équipement de Protection Individuelle de Guinée -->
+                <div class="relative project-card rounded-xl overflow-hidden shadow-md transition-all duration-300 h-80 bg-gradient-to-br from-yellow-500 to-orange-500 hidden" id="epig-project">
+                    <img src="/resources/epig.png" alt="EPIG - Équipement de Protection Individuelle de Guinée" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                    
+                    <!-- Title and Description - Show on hover only -->
+                    <div class="absolute inset-0 p-6 flex flex-col justify-center text-white opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-xl font-bold mb-2">EPIG - Équipement de Protection Individuelle de Guinée</h3>
+                        <p class="text-sm mb-4">Découvrez notre gamme complète d'EPI conformes aux normes internationales ISO, CSA, BSCI pour les secteurs minier et construction en Guinée.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">EPI</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">Sécurité</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">Mining</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">ISO/CSA/BSCI</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Buttons - Always visible -->
+                    <div class="absolute bottom-4 left-4 right-4 flex space-x-2">
+                        <a href="https://github.com/Bamamou" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-20 px-3 py-2 rounded-full text-xs hover:bg-opacity-30 transition-all text-white">
+                            <i class="fab fa-github mr-1"></i> Code
+                        </a>
+                        <a href="https://epig.netlify.app/" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-20 px-3 py-2 rounded-full text-xs hover:bg-opacity-30 transition-all text-white">
+                            <i class="fas fa-hard-hat mr-1"></i> Catalogue
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 14: Gestion Immobilière with IA -->
+                <div class="relative project-card rounded-xl overflow-hidden shadow-md transition-all duration-300 h-80 bg-gradient-to-br from-blue-600 to-indigo-700 hidden" id="gestion-immobiliere-project">
+                    <img src="/resources/gestion-immobiliere.png" alt="Gestion Immobilière with IA" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                    
+                    <!-- Title and Description - Show on hover only -->
+                    <div class="absolute inset-0 p-6 flex flex-col justify-center text-white opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-xl font-bold mb-2">Gestion Immobilière with IA</h3>
+                        <p class="text-sm mb-4">La Gestion intelligente de vos propriétés immobilières en Guinée.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">IA</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">Immobilier</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">React</span>
+                            <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-xs">Python</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Buttons - Always visible -->
+                    <div class="absolute bottom-4 left-4 right-4 flex space-x-2">
+                        <a href="https://github.com/Bamamou" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-20 px-3 py-2 rounded-full text-xs hover:bg-opacity-30 transition-all text-white">
+                            <i class="fab fa-github mr-1"></i> Code
+                        </a>
+                        <a href="https://gestion-immobiliere.netlify.app/auth" target="_blank" rel="noopener noreferrer" class="bg-white bg-opacity-20 px-3 py-2 rounded-full text-xs hover:bg-opacity-30 transition-all text-white">
+                            <i class="fas fa-building mr-1"></i> Plateforme
+                        </a>
+                    </div>
+                </div>
             </div>
             
             <div class="text-center mt-12">
@@ -876,7 +932,7 @@
             
             <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-400 mb-4 md:mb-0">
-                    &copy; 2023 Nicolas Bammaou. All rights reserved.
+                    &copy; 2025 Nicolas Bammaou. All rights reserved.
                 </p>
                 <div class="flex space-x-6">
                     <a href="https://github.com/Bamamou" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300">
@@ -1075,6 +1131,8 @@
             const simandouProject = document.getElementById('simandou-project');
             const professionalToolsProject = document.getElementById('professional-tools-project');
             const zamsaProject = document.getElementById('zamsa-project');
+            const epigProject = document.getElementById('epig-project');
+            const gestionImmobiliereProject = document.getElementById('gestion-immobiliere-project');
             const viewAllBtn = document.getElementById('view-all-btn');
             const viewAllIcon = document.getElementById('view-all-icon');
             
@@ -1098,6 +1156,12 @@
                 zamsaProject.classList.remove('hidden');
                 zamsaProject.style.animation = 'fadeInUp 1.6s ease-out';
                 
+                epigProject.classList.remove('hidden');
+                epigProject.style.animation = 'fadeInUp 1.8s ease-out';
+                
+                gestionImmobiliereProject.classList.remove('hidden');
+                gestionImmobiliereProject.style.animation = 'fadeInUp 2.0s ease-out';
+                
                 // Update button text and icon
                 viewAllBtn.innerHTML = 'Show Less <i class="fas fa-arrow-up ml-2" id="view-all-icon"></i>';
                 showingAllProjects = true;
@@ -1109,6 +1173,8 @@
                 simandouProject.style.animation = 'fadeOut 0.4s ease-in';
                 professionalToolsProject.style.animation = 'fadeOut 0.4s ease-in';
                 zamsaProject.style.animation = 'fadeOut 0.4s ease-in';
+                epigProject.style.animation = 'fadeOut 0.4s ease-in';
+                gestionImmobiliereProject.style.animation = 'fadeOut 0.4s ease-in';
                 
                 setTimeout(() => {
                     hevcsProject.classList.add('hidden');
@@ -1117,6 +1183,8 @@
                     simandouProject.classList.add('hidden');
                     professionalToolsProject.classList.add('hidden');
                     zamsaProject.classList.add('hidden');
+                    epigProject.classList.add('hidden');
+                    gestionImmobiliereProject.classList.add('hidden');
                 }, 400);
                 
                 // Update button text and icon
